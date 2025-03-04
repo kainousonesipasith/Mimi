@@ -25,21 +25,21 @@ def display_emotion_on_screen(emotion):
     text = f"{emotion}"
     text_width, text_height = draw.textsize(text, font=font)
     draw.text(
-        ((480 - text_width) // 2, (320 - text_height) // 2),
-        text,
-        font=font,
+        ((480 - text_width) // 2, (320 - text_height) // 2), 
+        text,  
+        font=font, 
         fill=(255, 255, 255)
     )
-    
-    # แปลงภาพให้สามารถแสดงบนหน้าจอ MHS-3.5 นิ้วได้
-    screen = np.array(image)
+     
+    # แปลงภาพให้สามารถแสดงบนหน้าจอ MHS-3.5 นิ้วได้ 
+    screen = np.array(image)  
     screen = cv2.cvtColor(screen, cv2.COLOR_RGB2BGR)
     cv2.imshow("Emotion Display", screen)
-    cv2.waitKey(1)  # อัพเดตหน้าจอ
+    cv2.waitKey(1)  # อัพเดตหน้าจอ 
 
 while True:
     # อ่านเฟรมจากกล้อง
-    ret, frame = cap.read()
+    ret, frame = cap.read() 
     if not ret:
         break
 

@@ -90,19 +90,19 @@ while True:
     cv2.imshow("Emotion Detection", frame)
 
     # แสดงหน้าต่างที่ 2: รูปภาพอารมณ์
-    if current_emotion_image is not None:
-        if fullscreen:
-            cv2.setWindowProperty("Emotion Image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-        else:
-            cv2.setWindowProperty("Emotion Image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
+    # if current_emotion_image is not None:
+    #     if fullscreen:
+    #         cv2.setWindowProperty("Emotion Image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+    #     else:
+    #         cv2.setWindowProperty("Emotion Image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
 
-        cv2.imshow("Emotion Image", current_emotion_image)
+    #     cv2.imshow("Emotion Image", current_emotion_image)
 
     # ตรวจสอบกดปุ่ม F11 เพื่อเปลี่ยนโหมดเต็มจอ
     key = cv2.waitKey(1) & 0xFF
     if key == ord('q'):  # กด 'q' เพื่อออกจากโปรแกรม
         break
-    elif key == 0xFF & 0xFF and cv2.getWindowProperty("Emotion Image", cv2.WND_PROP_FULLSCREEN) == -1:
+    elif key == 0xFF and cv2.getWindowProperty("Emotion Image", cv2.WND_PROP_FULLSCREEN) == -1:
         # หากกด F11 หรือคลิกที่หน้าต่างเพื่อทำให้มันเต็มจอ
         fullscreen = not fullscreen
 

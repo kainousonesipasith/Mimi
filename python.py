@@ -38,7 +38,7 @@ while True:
     if result:
         # หาค่าที่มีคะแนนสูงสุดและดึงกรอบใบหน้า
         emotions = result[0]["emotions"]
-        box = result[0]["box"]
+        box = result[0]["box"] 
         emotion, score = max(emotions.items(), key=lambda item: item[1])
 
         # วาดกรอบใบหน้าและแสดงผลอารมณ์
@@ -57,7 +57,7 @@ while True:
                     arduino = None
                     connection_error = True  # เปิดใช้งานการแสดงข้อความเมื่อไม่มีการเชื่อมต่อ
         else:
-            # แสดงข้อความบนเฟรมเมื่อไม่มีการเชื่อมต่อกับ Arduino
+              # แสดงข้อความบนเฟรมเมื่อไม่มีกา รเชื่อมต่อกับ Arduino
             cv2.putText(frame, f"can't send '{emotion}' to Arduino", 
                         (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
